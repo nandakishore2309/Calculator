@@ -1,0 +1,176 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int choice,n;
+    double a, b,c, result,discriminant,root1,root2;
+    unsigned long long factorial = 1;
+    
+    while (1) {
+printf("\n----------------------------------------------------CALCULATOR-----------------------------------------------------\n");
+        printf("1. Addition\n");
+        printf("2. Subtraction\n");
+        printf("3. Multiplication\n");
+        printf("4. Division\n");
+        printf("5. Power\n");
+        printf("6.Factorial\n");
+        printf("7. Square Root\n");
+        printf("8. Logarithm (base 10)\n");
+        printf("9. Sin\n");
+        printf("10. Cos\n");
+        printf("11. Tan\n");
+        printf("12.Roots of quadratic equation\n");
+        printf("0. Exit\n");
+
+        printf(" Enter your choice:\n ");
+        scanf("%d", &choice);
+
+        if (choice == 0) {
+            printf("The End\n");
+            break;
+        }
+
+        switch (choice) {
+
+            case 1:
+                printf("Enter two numbers: ");
+                scanf("%lf %lf", &a, &b);
+                result = a + b;
+                printf("Result = %.lf\n", result);
+                break;
+
+            case 2:
+                printf("Enter two numbers: ");
+                scanf("%lf %lf", &a, &b);
+                result = a - b;
+                printf("Result = %.lf\n", result);
+                break;
+
+            case 3:
+                printf("Enter two numbers: ");
+                scanf("%lf %lf", &a, &b);
+                result = a * b;
+                printf("Result = %.lf\n", result);
+                break;
+
+            case 4:
+                printf("Enter two numbers: ");
+                scanf("%lf %lf", &a, &b);
+
+                if (b == 0)
+                    printf("Error: Cannot divide by zero.\n");
+                else {
+                    result = a / b;
+                    printf("Result = %.lf\n", result);
+                }
+                break;
+
+            case 5:
+                printf("Enter base and exponent: ");
+                scanf("%lf %lf", &a, &b);
+                result = pow(a, b);
+                printf("Result = %.lf\n", result);
+                break;
+                
+            case 6:
+                printf("Enter a number: ");
+                scanf("%d", &n);
+                if (n < 0) {
+                printf("Factorial is not defined for negative numbers.\n");
+                } 
+                else 
+                {
+                for (int i = 1; i <= n; i++) 
+                {
+                factorial *= i;
+                }
+                printf("Factorial of %d = %llu\n", n, factorial);
+                }
+                break;
+
+            case 7:
+                printf("Enter a number: ");
+                scanf("%lf", &a);
+
+                if (a < 0)
+                    printf("Error: Negative number.\n");
+                else {
+                    result = sqrt(a);
+                    printf("Result = %.lf\n", result);
+                }
+                break;
+
+            case 8:
+                printf("Enter a number: ");
+                scanf("%lf", &a);
+
+                if (a <= 0)
+                    printf("Error: Number must be positive.\n");
+                else {
+                    result = log10(a);
+                    printf("Result = %.lf\n", result);
+                }
+                break;
+
+            case 9:
+                printf("Enter angle in degrees: ");
+                scanf("%lf", &a);
+
+                result = sin(a * M_PI / 180);
+                printf("sin(%.2lf) = %.lf\n", a, result);
+                break;
+
+            case 10:
+                printf("Enter angle in degrees: ");
+                scanf("%lf", &a);
+
+                result = cos(a * M_PI / 180);
+                printf("cos(%.2lf) = %.lf\n", a, result);
+                break;
+
+            case 11:
+                printf("Enter angle in degrees: ");
+                scanf("%lf", &a);
+
+                result = tan(a * M_PI / 180);
+                printf("tan(%.2lf) = %.lf\n", a, result);
+                break;
+            case 12:
+                printf("Enter the quadratic equation is a*x^2+b*x+c");
+                printf("Enter a, b and c: ");
+                scanf("%lf %lf %lf", &a, &b, &c);
+                discriminant = b * b - 4* a * c;
+                if (a == 0) 
+                {
+                printf("This is not a quadratic equation.\n");
+                }
+                else if (discriminant > 0) 
+                {
+                root1 = (-b + sqrt(discriminant)) / (2 * a);
+                root2 = (-b - sqrt(discriminant)) / (2 * a);
+                printf("Root 1 = %.2lf\n", root1);
+                printf("Root 2 = %.2lf\n", root2);
+                }
+                else if (discriminant == 0) {
+                root1 = -b / (2 * a);
+                printf("Both roots are equal.\n");
+                printf("Root = %.2lf\n", root1);
+                }
+                else 
+                 {
+                float realPart = -b / (2 * a);
+                float imaginaryPart = sqrt(-discriminant) / (2 * a);
+                printf("Complex roots:\n");
+                printf("Root 1 = %.2f + %.2fi\n", realPart, imaginaryPart);
+                printf("Root 2 = %.2f - %.2fi\n", realPart, imaginaryPart);
+                }
+                break;
+
+            default:
+                printf("Invalid choice. Try again.\n");
+        }
+    }
+
+    return 0;// use gcc calculator2.c -o calculator2 -lm  and ./calculator2 to execute
+}
+
