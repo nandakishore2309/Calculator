@@ -37,21 +37,21 @@ printf("\n----------------------------------------------------CALCULATOR--------
                 printf("Enter two numbers: ");
                 scanf("%lf %lf", &a, &b);
                 result = a + b;
-                printf("Result = %.lf\n", result);
+                printf("Result = %.6lf\n", result);
                 break;
 
             case 2:
                 printf("Enter two numbers: ");
                 scanf("%lf %lf", &a, &b);
                 result = a - b;
-                printf("Result = %.lf\n", result);
+                printf("Result = %.6lf\n", result);
                 break;
 
             case 3:
                 printf("Enter two numbers: ");
                 scanf("%lf %lf", &a, &b);
                 result = a * b;
-                printf("Result = %.lf\n", result);
+                printf("Result = %.6lf\n", result);
                 break;
 
             case 4:
@@ -62,7 +62,7 @@ printf("\n----------------------------------------------------CALCULATOR--------
                     printf("Error: Cannot divide by zero.\n");
                 else {
                     result = a / b;
-                    printf("Result = %.lf\n", result);
+                    printf("Result = %.6lf\n", result);
                 }
                 break;
 
@@ -70,7 +70,7 @@ printf("\n----------------------------------------------------CALCULATOR--------
                 printf("Enter base and exponent: ");
                 scanf("%lf %lf", &a, &b);
                 result = pow(a, b);
-                printf("Result = %.lf\n", result);
+                printf("Result = %.6lf\n", result);
                 break;
 
             case 6:
@@ -98,7 +98,7 @@ printf("\n----------------------------------------------------CALCULATOR--------
                     printf("Error: Negative number.\n");
                 else {
                     result = sqrt(a);
-                    printf("Result = %.lf\n", result);
+                    printf("Result = %.6lf\n", result);
                 }
                 break;
 
@@ -110,7 +110,7 @@ printf("\n----------------------------------------------------CALCULATOR--------
                     printf("Error: Number must be positive.\n");
                 else {
                     result = log10(a);
-                    printf("Result = %.lf\n", result);
+                    printf("Result = %.6lf\n", result);
                 }
                 break;
 
@@ -119,7 +119,7 @@ printf("\n----------------------------------------------------CALCULATOR--------
                 scanf("%lf", &a);
 
                 result = sin(a * PI / 180);
-                printf("sin(%.2lf) = %.2lf\n", a, result);
+                printf("sin(%.6lf) = %.6lf\n", a, result);
                 break;
 
             case 10:
@@ -127,7 +127,7 @@ printf("\n----------------------------------------------------CALCULATOR--------
                 scanf("%lf", &a);
 
                 result = cos(a * PI / 180);
-                printf("cos(%.2lf) = %.2lf\n", a, result);
+                printf("cos(%.6lf) = %.6lf\n", a, result);
                 break;
 
             case 11:
@@ -135,7 +135,7 @@ printf("\n----------------------------------------------------CALCULATOR--------
                 scanf("%lf", &a);
 
                 result = tan(a * PI / 180);
-                printf("tan(%.2lf) = %.2lf\n", a, result);
+                printf("tan(%.6lf) = %.6lf\n", a, result);
                 break;
             case 12:
                 printf("Enter the quadratic equation is a*x^2+b*x+c");
@@ -150,21 +150,21 @@ printf("\n----------------------------------------------------CALCULATOR--------
                 {
                 root1 = (-b + sqrt(discriminant)) / (2 * a);
                 root2 = (-b - sqrt(discriminant)) / (2 * a);
-                printf("Root 1 = %.2lf\n", root1);
-                printf("Root 2 = %.2lf\n", root2);
+                printf("Root 1 = %.6lf\n", root1);
+                printf("Root 2 = %.6lf\n", root2);
                 }
                 else if (discriminant == 0) {
                 root1 = -b / (2 * a);
                 printf("Both roots are equal.\n");
-                printf("Root = %.2lf\n", root1);
+                printf("Root = %.6lf\n", root1);
                 }
                 else 
                  {
                 float realPart = -b / (2 * a);
                 float imaginaryPart = sqrt(-discriminant) / (2 * a);
                 printf("Complex roots:\n");
-                printf("Root 1 = %.2f + %.2fi\n", realPart, imaginaryPart);
-                printf("Root 2 = %.2f - %.2fi\n", realPart, imaginaryPart);
+                printf("Root 1 = %.6f + %.6fi\n", realPart, imaginaryPart);
+                printf("Root 2 = %.6f - %.6fi\n", realPart, imaginaryPart);
                 }
                 break;
 
