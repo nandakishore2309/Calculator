@@ -119,7 +119,7 @@ printf("\n----------------------------------------------------CALCULATOR--------
                 scanf("%lf", &a);
 
                 result = sin(a * PI / 180);
-                printf("sin(%.2lf) = %.lf\n", a, result);
+                printf("sin(%.2lf) = %.2lf\n", a, result);
                 break;
 
             case 10:
@@ -127,7 +127,7 @@ printf("\n----------------------------------------------------CALCULATOR--------
                 scanf("%lf", &a);
 
                 result = cos(a * PI / 180);
-                printf("cos(%.2lf) = %.lf\n", a, result);
+                printf("cos(%.2lf) = %.2lf\n", a, result);
                 break;
 
             case 11:
@@ -135,7 +135,7 @@ printf("\n----------------------------------------------------CALCULATOR--------
                 scanf("%lf", &a);
 
                 result = tan(a * PI / 180);
-                printf("tan(%.2lf) = %.lf\n", a, result);
+                printf("tan(%.2lf) = %.2lf\n", a, result);
                 break;
             case 12:
                 printf("Enter the quadratic equation is a*x^2+b*x+c");
