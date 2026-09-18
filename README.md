@@ -24,19 +24,19 @@ To compile and run this program, you will need a C compiler installed on your sy
 
 ## How to Build and Run
 
-1. Clone or download the `calculator2.c` file to your local machine.
+1. Clone or download the `Calculator code` file to your local machine.
 2. Open your terminal and navigate to the directory where the file is saved.
 3. Compile the code using **GCC**. *Note: The math library flag (`-lm`) is required.*
 
 ```bash
-gcc calculator2.c -o calculator2 -lm
+gcc Calculator_code -o Calculator_code-lm
 
 ```
 
 4. Run the executable:
 
 ```bash
-./calculator2
+./Calculator_code
 
 ```
 
