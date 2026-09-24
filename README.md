@@ -58,6 +58,8 @@ gcc Calculator_code -o Calculator_code-lm
 10. Cos
 11. Tan
 12. Roots of quadratic equation
+13.Addition of matrices
+14.Subtraction of matrices 
 0. Exit
 
 ```
