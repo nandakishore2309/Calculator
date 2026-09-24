@@ -2,55 +2,65 @@
 #include <math.h>
 #define PI 3.141592653589793
 
-int main() {
-    int choice,n;
+int main(){
+    int choice, n;
+    int x, y, z, w;
     double a, b,c, result,discriminant,root1,root2;
     unsigned long long factorial = 1;
 
-    while (1) {
-printf("\n----------------------------------------------------CALCULATOR-----------------------------------------------------\n");
-        printf("1. Addition\n");
-        printf("2. Subtraction\n");
-        printf("3. Multiplication\n");
-        printf("4. Division\n");
-        printf("5. Power\n");
-        printf("6.Factorial\n");
-        printf("7. Square Root\n");
-        printf("8. Logarithm (base 10)\n");
-        printf("9. Sin\n");
+    while (1){
+        printf("\n------------------------------------------------------- CALCULATOR----------------------------------------------- \n");
+        printf("1.  Addition\n");
+        printf("2.  Subtraction\n");
+        printf("3.  Multiplication\n");
+        printf("4.  Division\n");
+        printf("5.  Power\n");
+        printf("6.  Factorial\n");
+        printf("7.  Square Root\n");
+        printf("8.  Logarithm (base 10)\n");
+        printf("9.  Sin\n");
         printf("10. Cos\n");
         printf("11. Tan\n");
-        printf("12.Roots of quadratic equation\n");
-        printf("0. Exit\n");
+        printf("12. Roots of quadratic equation\n");
+        printf("13. Matrix addition\n");
+        printf("14. Matrix subtraction\n");
+        printf("0.  Exit\n");
 
-        printf(" Enter your choice:\n ");
+        printf("\nEnter your choice: ");
         scanf("%d", &choice);
 
-        if (choice == 0) {
+        if (choice == 0)
+        {
             printf("The End\n");
             break;
         }
 
-        switch (choice) {
-
+        switch (choice)
+        {
             case 1:
                 printf("Enter two numbers: ");
                 scanf("%lf %lf", &a, &b);
+
                 result = a + b;
+
                 printf("Result = %.6lf\n", result);
                 break;
 
             case 2:
                 printf("Enter two numbers: ");
                 scanf("%lf %lf", &a, &b);
+
                 result = a - b;
+
                 printf("Result = %.6lf\n", result);
                 break;
 
             case 3:
                 printf("Enter two numbers: ");
                 scanf("%lf %lf", &a, &b);
+
                 result = a * b;
+
                 printf("Result = %.6lf\n", result);
                 break;
 
@@ -59,119 +69,281 @@ printf("\n----------------------------------------------------CALCULATOR--------
                 scanf("%lf %lf", &a, &b);
 
                 if (b == 0)
+                {
                     printf("Error: Cannot divide by zero.\n");
-                else {
+                }
+                else
+                {
                     result = a / b;
                     printf("Result = %.6lf\n", result);
                 }
+
                 break;
 
             case 5:
                 printf("Enter base and exponent: ");
                 scanf("%lf %lf", &a, &b);
+
                 result = pow(a, b);
+
                 printf("Result = %.6lf\n", result);
                 break;
 
+  
             case 6:
                 printf("Enter a number: ");
                 scanf("%d", &n);
+
                 factorial = 1;
-                if (n < 0) {
-                printf("Factorial is not defined for negative numbers.\n");
-                } 
-                else 
+
+                if (n < 0)
                 {
-                for (int i = 1; i <= n; i++) 
+                    printf("Factorial is not defined for negative numbers.\n");
+                }
+                else
                 {
-                factorial *= i;
+                    for (int i = 1; i <= n; i++)
+                    {
+                        factorial *= i;
+                    }
+
+                    printf("Factorial of %d = %llu\n", n, factorial);
                 }
-                printf("Factorial of %d = %llu\n", n, factorial);
-                }
+
                 break;
 
+    
             case 7:
                 printf("Enter a number: ");
                 scanf("%lf", &a);
 
                 if (a < 0)
+                {
                     printf("Error: Negative number.\n");
-                else {
+                }
+                else
+                {
                     result = sqrt(a);
+
                     printf("Result = %.6lf\n", result);
                 }
+
                 break;
 
+    
             case 8:
                 printf("Enter a number: ");
                 scanf("%lf", &a);
 
                 if (a <= 0)
+                {
                     printf("Error: Number must be positive.\n");
-                else {
+                }
+                else
+                {
                     result = log10(a);
+
                     printf("Result = %.6lf\n", result);
                 }
+
                 break;
 
+      
             case 9:
                 printf("Enter angle in degrees: ");
                 scanf("%lf", &a);
 
                 result = sin(a * PI / 180);
+
                 printf("sin(%.6lf) = %.6lf\n", a, result);
                 break;
 
+            // Cos
             case 10:
                 printf("Enter angle in degrees: ");
                 scanf("%lf", &a);
 
                 result = cos(a * PI / 180);
+
                 printf("cos(%.6lf) = %.6lf\n", a, result);
                 break;
 
+            // Tan
             case 11:
                 printf("Enter angle in degrees: ");
                 scanf("%lf", &a);
 
                 result = tan(a * PI / 180);
+
                 printf("tan(%.6lf) = %.6lf\n", a, result);
                 break;
+
             case 12:
-                printf("Enter the quadratic equation is a*x^2+b*x+c");
+                printf("For the equation ax^2 + bx + c = 0\n");
+
                 printf("Enter a, b and c: ");
                 scanf("%lf %lf %lf", &a, &b, &c);
-                discriminant = b * b - 4* a * c;
-                if (a == 0) 
+
+                if (a == 0)
                 {
-                printf("This is not a quadratic equation.\n");
+                    printf("This is not a quadratic equation.\n");
+                    break;
                 }
-                else if (discriminant > 0) 
+
+                discriminant = b * b - 4 * a * c;
+
+                if (discriminant > 0)
                 {
-                root1 = (-b + sqrt(discriminant)) / (2 * a);
-                root2 = (-b - sqrt(discriminant)) / (2 * a);
-                printf("Root 1 = %.6lf\n", root1);
-                printf("Root 2 = %.6lf\n", root2);
+                    root1 = (-b + sqrt(discriminant)) / (2 * a);
+                    root2 = (-b - sqrt(discriminant)) / (2 * a);
+
+                    printf("Root 1 = %.6lf\n", root1);
+                    printf("Root 2 = %.6lf\n", root2);
                 }
-                else if (discriminant == 0) {
-                root1 = -b / (2 * a);
-                printf("Both roots are equal.\n");
-                printf("Root = %.6lf\n", root1);
+                else if (discriminant == 0)
+                {
+                    root1 = -b / (2 * a);
+
+                    printf("Both roots are equal.\n");
+                    printf("Root = %.6lf\n", root1);
                 }
-                else 
-                 {
-                float realPart = -b / (2 * a);
-                float imaginaryPart = sqrt(-discriminant) / (2 * a);
-                printf("Complex roots:\n");
-                printf("Root 1 = %.6f + %.6fi\n", realPart, imaginaryPart);
-                printf("Root 2 = %.6f - %.6fi\n", realPart, imaginaryPart);
+                else
+                {
+                    double realPart;
+                    double imaginaryPart;
+
+                    realPart = -b / (2 * a);
+                    imaginaryPart = sqrt(-discriminant) / (2 * a);
+
+                    printf("Complex roots:\n");
+                    printf("Root 1 = %.6lf + %.6lfi\n",
+                           realPart, imaginaryPart);
+
+                    printf("Root 2 = %.6lf - %.6lfi\n",
+                           realPart, imaginaryPart);
                 }
+
                 break;
+
+            case 13:
+            {
+                printf("Enter number of rows and columns: ");
+                scanf("%d %d", &w, &z);
+
+                int m1[w][z];
+                int m2[w][z];
+                int m3[w][z];
+
+                printf("\nEnter the elements of Matrix 1:\n");
+
+                for (x = 0; x < w; x++)
+                {
+                    for (y = 0; y < z; y++)
+                    {
+                        printf("Element[%d][%d] = ", x, y);
+                        scanf("%d", &m1[x][y]);
+                    }
+                }
+
+                printf("\nEnter the elements of Matrix 2:\n");
+
+                for (x = 0; x < w; x++)
+                {
+                    for (y = 0; y < z; y++)
+                    {
+                        printf("Element[%d][%d] = ", x, y);
+                        scanf("%d", &m2[x][y]);
+                    }
+                }
+
+                // Adding matrices
+                for (x = 0; x < w; x++)
+                {
+                    for (y = 0; y < z; y++)
+                    {
+                        m3[x][y] = m1[x][y] + m2[x][y];
+                    }
+                }
+
+                printf("\nSum of matrices:\n");
+
+                for (x = 0; x < w; x++)
+                {
+                    for (y = 0; y < z; y++)
+                    {
+                        printf("%d\t", m3[x][y]);
+                    }
+
+                    printf("\n");
+                }
+
+                break;
+            }
+            case 14:
+            {
+                printf("Enter number of rows and columns: ");
+                scanf("%d %d", &w, &z);
+
+                int m1[w][z];
+                int m2[w][z];
+                int m3[w][z];
+
+                printf("\nEnter the elements of Matrix 1:\n");
+
+                for (x = 0; x < w; x++)
+                {
+                    for (y = 0; y < z; y++)
+                    {
+                        printf("Element[%d][%d] = ", x, y);
+                        scanf("%d", &m1[x][y]);
+                    }
+                }
+
+                printf("\nEnter the elements of Matrix 2:\n");
+
+                for (x = 0; x < w; x++)
+                {
+                    for (y = 0; y < z; y++)
+                    {
+                        printf("Element[%d][%d] = ", x, y);
+                        scanf("%d", &m2[x][y]);
+                    }
+                }
+
+                // Subtracting matrices
+                for (x = 0; x < w; x++)
+                {
+                    for (y = 0; y < z; y++)
+                    {
+                        m3[x][y] = m1[x][y] - m2[x][y];
+                    }
+                }
+
+                printf("\nDifference of matrices:\n");
+
+                for (x = 0; x < w; x++)
+                {
+                    for (y = 0; y < z; y++)
+                    {
+                        printf("%d\t", m3[x][y]);
+                    }
+
+                    printf("\n");
+                   }
+
+                    break;
+                   }
 
             default:
                 printf("Invalid choice. Try again.\n");
         }
-    }
+        }
 
-    return 0;// use gcc calculator2.c -o calculator2 -lm  and ./calculator2 to execute
-}
+        return 0;
+        }
+/*
+Compile using:
+gcc calculator2.c -o calculator2 -lm
+Run using:
+./calculator2
+*/
