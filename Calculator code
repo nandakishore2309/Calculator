@@ -24,6 +24,7 @@ int main(){
         printf("12. Roots of quadratic equation\n");
         printf("13. Matrix addition\n");
         printf("14. Matrix subtraction\n");
+        printf("15. Matrix multiplication\n");
         printf("0.  Exit\n");
 
         printf("\nEnter your choice: ");
@@ -333,6 +334,59 @@ int main(){
 
                     break;
                    }
+               case 15:
+                   {
+                    printf("Enter number of rows and columns in matrix 1 \n");
+                    scanf("%d %d", &r1, &c1);   
+                    printf("Enter number of rows and columns in matrix 2 \n");
+                    scanf("%d %d", &r2, &c2);    
+                    int m1[r1][c1], m2[r2][c2], m3[r1][c2];    
+                    if (c1 != r2) 
+                    {
+                     printf("Matrices cannot be multiplied \n");
+                    } 
+                    else 
+                    {
+                     printf("Enter first matrix elements \n");
+                     for (i = 0; i < r1; i++)
+                  {
+                     for (j = 0; j < c1; j++)
+                    {
+                     scanf("%d", &m1[i][j]);
+                    }
+                  }  
+        
+                   printf("Enter second matrix elements \n");
+                   for (i = 0; i < r2; i++)
+                { 
+                   for (j = 0; j < c2; j++)
+                 {
+                   scanf("%d", &m2[i][j]);
+                 }
+                }
+                for (i = 0; i < r1; i++) 
+               {
+                 for (j = 0; j < c2; j++) 
+                 {
+                    m3[i][j] = 0;
+                   for (k = 0; k < c1; k++) 
+                   {
+                    m3[i][j] = m3[i][j] + m1[i][k] * m2[k][j];
+                   }
+                 }
+               }            
+               printf("Multiplied matrix \n");
+               for (i = 0; i < r1; i++)
+               {
+                 for (j = 0; j < c2; j++) 
+                 {
+                   printf("%d \t", m3[i][j]);
+                 }
+                 printf("\n");
+               }
+             }
+             break;      
+            }
 
             default:
                 printf("Invalid choice. Try again.\n");
