@@ -59,7 +59,8 @@ gcc Calculator_code -o Calculator_code-lm
 11. Tan
 12. Roots of quadratic equation
 13.Addition of matrices
-14.Subtraction of matrices 
+14.Subtraction of matrices
+15.Matrix multiplication
 0. Exit
 
 ```
