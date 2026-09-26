@@ -4,6 +4,7 @@
 
 int main(){
     int choice, n;
+    int r1, c1, r2, c2, i, j, k;
     int x, y, z, w;
     double a, b,c, result,discriminant,root1,root2;
     unsigned long long factorial = 1;
@@ -387,17 +388,10 @@ int main(){
              }
              break;      
             }
-
             default:
                 printf("Invalid choice. Try again.\n");
-        }
-        }
-
+         }
+     }
         return 0;
-        }
-/*
-Compile using:
-gcc calculator2.c -o calculator2 -lm
-Run using:
-./calculator2
-*/
+ }
+// Compile_using:"gcc calculator2.c -o calculator2 -lm " and Run using:"./calculator2"
